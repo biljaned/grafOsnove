@@ -8,7 +8,7 @@ bool graf2[MAXN][MAXN];//2. nacin
 
 
 int main()
-{//proba
+{//proba 1
     int n,m;
     cin >> n >> m;
     //kreiranje grafa
