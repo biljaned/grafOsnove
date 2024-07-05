@@ -13,6 +13,20 @@ void dfs(int node){//pretraga u dubinu
     for(int u:graf1[node])
         dfs(u);
 }
+void bfs(){//pretraga u sirinu
+    //usecase-najkraca distanca do svih osalih cvorova u netezinskom grafu
+    queue<int> red;
+    red.push(1);
+    while(red.size()){
+        int node=red.front();
+        red.pop();
+        if(visited[node]) continue;
+        visited[node]=true;
+        cout << node << " ";
+        for(int u:graf1[node])
+            red.push(u);
+    }
+}
 
 int main()
 {
@@ -49,7 +63,10 @@ int main()
     cout << "poseceni po dfs: ";
     dfs(1);//pocinjemo pretragu iz 1. cvora po metodi deep first search
     cout << endl;
-
+    for(int i=0; i<visited.size(); i++)
+        visited[i]=0;
+    cout << "poseceni po bfs: ";
+    bfs();
 
     return 0;
 }
